@@ -1,0 +1,29 @@
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+driver = webdriver.Chrome()
+driver.get("http://www.automationpractice.pl/")
+driver.maximize_window()
+time.sleep(6)
+sign_in_button = driver.find_element(By.XPATH, '//*[@id="SubmitLogin"]/span')
+sign_in_button.click()
+time.sleep(6)
+email_box = driver.find_element(By.ID, "email")
+email_box.send_keys("208r1a05i2cse@gmail.com")
+time.sleep(6)
+password_box = driver.find_element(By.NAME, "passwd")
+password_box.send_keys("Lasmaiah@5014")
+time.sleep(6)
+sign_in_button = driver.find_element(By.XPATH, '//*[@id="SubmitLogin"]/span')
+sign_in_button.click()
+time.sleep(6)
+dresses_link = driver.find_element(By.XPATH, "//*[@id=block_top_menu]/ul/li[2]/a")
+dresses_link.click()
+time.sleep(5)
+women_link = driver.find_element(By.XPATH, "//*[@id=block_top_menu]/ul/li[1]/a")
+women_link.click()
+time.sleep(2)
+driver.quit()
+print("Browser closed successfully.")
